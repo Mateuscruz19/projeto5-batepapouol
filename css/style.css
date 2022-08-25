@@ -1,0 +1,52 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.conteiner-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 72px;
+}
+
+.form{
+   display: flex;
+   align-items: center;
+   height: 100%;
+   flex-direction: column;
+    margin-top:92px;
+   
+}
+
+
+.inputlogin{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    color: #000000;
+    background: #FFFFFF;
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+
+.botaologin{
+    width: 109px;
+    height: 45px;
+    margin-top: 20px;
+    border: none;
+    background: greenyellow;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 9px;
+    
+}
+
+.botaologin:disabled{
+    background: #E7E7E7
+}
