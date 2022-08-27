@@ -29,19 +29,44 @@ const enviarmembro = (resposta) => {
 // se der erro ao enviar enviar a resposta
 const membroerro = (erro) => {
     alert('Puts,que azar o seu, o servidor não esta funcionando');
-     console.log(erro.response);
+     console.log(erro);
     }
 
 
-const deutudocerto = (resposta) => {
-    alert('deu tudo certo irmao');   
+const deutudocerto = () => {
+    console.log('Seu nickname foi atualizado'); 
 }
 
-const deutudoerrado = (erro) => {
-    alert('deu tudo errado irmao');
+const deutudoerrado = (err) => {
+    if(err.response.status === 400){
+    const statusCode = err.response.status;
+    alert('O nome digitado já esta sendo utilizado,tente novamente');
+    NickName = "";
+    pedirnome();
 }
+  }
+
+
+function atualizandochat() {
+    const promessaatt = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', nickformatado);
+    promessaatt.then(atualizar); // sucesso
+    promessaatt.catch(erratt); // erro
+}
+
+setInterval(atualizandochat, 5000);
+
+const erratt = (er) => {
+    alert('Puts,erro ao atualizar o seu nickname');
+}
+
+const atualizar = (re) => {
+    console.log('Sucesso');
+    
+}
+
+
 
 
 const promessa = axios.get('https://mock-api.driven.com.br/api/v6/uol/participants') 
 promessa.then(enviarmembro); // sucesso
-promessa.catch(membroerro) // erro
+promessa.catch(membroerro);
